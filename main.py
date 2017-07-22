@@ -36,7 +36,7 @@ def batchstatus():
     batch = data.get_batch_status(project)
     return render_template(
         'batchstatus.html',
-        sla = batch['sla'],
-        slo = batch['slo'],
+        SLA = batch['SLA'],
+        SLO = batch['SLO'],
         status = batch['status']
     )
