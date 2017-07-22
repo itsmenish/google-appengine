@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <title>Batch Monitoring</title>
+        <link rel="stylesheet" type="text/css" href="/static/style.css">
+    </head>
+    <body>
+        <div class="content center">
+            <div class="pagetitle">
+                <h1>Welcome to batch monitoring</h1>
+            </div>
+            <p>Select available projects from below list</p>
+            <p>
+                <form action="{{ url_for('batchstatus') }}" method="POST">
+                    <label for="project">
+                        <td>
+                            <select name="project">
+                                {% for x in projects %}
+                                <option value="{{ x }}"{% if loop.first %} SELECTED{% endif %}>{{ x }}</option>
+                                {% endfor %}
+                            </select>
+                            <input type="Submit">
+                        </td>
+                    </label>
+                </form>
+            </p>
+        </div>
+    </body>
+</html>
